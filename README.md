@@ -2,47 +2,47 @@
 
 ## Project Overview
 
-This project focuses on analyzing customer churn in an e-commerce dataset using **MySQL and SQL**. The project follows a structured data analysis workflow covering database creation, data cleaning, data transformation, exploratory analysis, and relational analysis.
+This project analyzes customer churn in an e-commerce dataset using **MySQL and SQL**. It follows a structured data analysis workflow covering database creation, data cleaning, data transformation, exploratory analysis, and relational analysis.
 
-The analysis explores customer behavior and churn patterns across factors such as **tenure, payment methods, order categories, coupon usage, satisfaction scores, cashback, order behavior, and distance from warehouse**.
+The analysis examines customer behavior and churn patterns across **tenure, payment methods, order categories, coupon usage, satisfaction scores, cashback, order behavior, and warehouse distance**.
 
 ## Objectives
 
-* Prepare and clean the customer churn dataset for analysis
+* Prepare and clean the customer churn dataset
 * Handle missing values using appropriate imputation techniques
-* Identify and remove data outliers
+* Identify and remove outliers
 * Standardize inconsistent categorical values
 * Transform raw data into analysis-ready fields
 * Compare churned and active customers
 * Analyze customer behavior across different segments
-* Apply SQL aggregation, subqueries, `CASE` statements, `HAVING`, and `JOIN` operations
+* Apply SQL aggregation, subqueries, `CASE`, `HAVING`, and `JOIN` operations
 * Demonstrate relational database concepts using customer return data
 
 ## Tools & Technologies
 
 * **Database:** MySQL
 * **Language:** SQL
-* **Concepts:** Data Cleaning, Data Transformation, Exploratory Data Analysis
-* **SQL Techniques:** Aggregations, Grouping, Subqueries, CASE Statements, JOINs, Primary Keys, Foreign Keys
+* **Data Analysis:** Exploratory Data Analysis
+* **SQL Concepts:** Aggregations, Grouping, Subqueries, CASE Statements, JOINs, Primary Keys, Foreign Keys
 
 ## Project Files
 
-### `Customer_churn_db`
+### `customer_churn_db.sql`
 
-Contains the database and initial customer churn table setup, including table creation and insertion of the original dataset.
+Contains the initial database and customer churn table setup, including table creation and insertion of the original dataset.
 
-### `CustomerChurn_DataCleaning`
+### `Customerchurn_Datacleaning.sql`
 
-Contains SQL queries used for:
+Contains SQL queries for:
 
 * Missing-value analysis
 * Mean and mode imputation
 * Outlier identification and removal
 * Standardization of categorical values
 * Column renaming
-* Data preparation
+* Data preparation and transformation
 
-### `Customer_churn_Analysis`
+### `Customer_churn_analysis.sql`
 
 Contains SQL queries for:
 
@@ -54,16 +54,16 @@ Contains SQL queries for:
 * Satisfaction and complaint analysis
 * Distance-based churn analysis
 * Subquery-based analysis
-* Customer returns analysis using relational joins
+* Customer return analysis using relational joins
 
 ## Data Cleaning & Transformation
 
-The dataset was prepared using the following steps:
+The dataset was prepared through the following steps:
 
 * Imputed missing numerical values using mean values
-* Imputed categorical/integer fields using mode values
+* Imputed selected fields using mode values
 * Removed records where `WarehouseToHome > 100`
-* Standardized inconsistent values such as payment modes and device categories
+* Standardized inconsistent payment, login device, and order category values
 * Renamed columns for improved readability
 * Created `ComplaintReceived` to represent complaint status
 * Created `ChurnStatus` to distinguish churned and active customers
@@ -103,9 +103,9 @@ The project includes analysis of:
 
 ## Customer Returns Analysis
 
-A separate `Customer_returns` table was created to demonstrate relational database concepts.
+A separate `Customer_returns` table was created within the analysis workflow to demonstrate relational database concepts.
 
-The table includes:
+The table contains:
 
 * `ReturnID`
 * `CustomerID`
@@ -114,7 +114,7 @@ The table includes:
 
 A **foreign key** connects `Customer_returns.CustomerID` with `Customer_Churn.CustomerID`.
 
-An `INNER JOIN` was then used to retrieve return information for customers who were both **churned and had submitted complaints**.
+An `INNER JOIN` is used to retrieve return details for customers who are both **churned and have submitted complaints**.
 
 ## SQL Concepts Demonstrated
 
@@ -136,22 +136,23 @@ An `INNER JOIN` was then used to retrieve return information for customers who w
 * `ALTER TABLE`
 * `UPDATE`
 * `DELETE`
-* Data Cleaning & Transformation
 
 ## Key Learning Outcomes
 
-Through this project, I gained practical experience in:
+This project provided practical experience in:
 
-* Cleaning and preparing real-world-style datasets using SQL
+* Cleaning and preparing datasets using SQL
 * Applying aggregate functions for business analysis
 * Using `GROUP BY` and `HAVING` for segment-level analysis
 * Writing subqueries for comparative analysis
-* Creating derived analytical categories using `CASE`
+* Creating derived categories using `CASE`
 * Working with relational tables using primary and foreign keys
 * Performing multi-table analysis using `JOIN`
 * Translating business questions into SQL queries
 
 ## Author
 
-## **Aneena K M**
+**Aneena K M**
+
+
 
